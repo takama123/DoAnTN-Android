@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context="com.example.computer.doantn.MainActivity"
+    >
+    <FrameLayout
+        android:id="@+id/frame_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent"
+        >
+    </FrameLayout>
+    <ImageView
+        android:id="@+id/name_app"
+        android:layout_marginTop="50px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/giupbehoctoan"
+        android:layout_centerHorizontal="true"
+        android:background="@null"
+        />
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bắt đầu"
+        android:layout_below="@id/name_app"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_main"
+        android:layout_marginTop="10px"
+        />
+    <Button
+        android:id="@+id/btnSetting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cài đặt"
+        android:layout_below="@id/btnStart"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_main"
+        android:layout_marginTop="10px"
+        />
+    <Button
+        android:id="@+id/btnExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thoát"
+        android:layout_below="@id/btnSetting"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_main"
+        android:layout_marginTop="10px"
+        />
+    <Button
+        android:id="@+id/btnSound"
+        android:background="@mipmap/sound_off_icon"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10px"
+        android:layout_marginRight="10px"
+        android:layout_width = "30dp"
+        android:layout_height= "30dp"
+        android:scaleType="fitXY"
+        android:text="On"
+        android:textSize="0sp"
+        />
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width = "100dp"
+        android:layout_height= "100dp"
+        android:scaleType="fitXY"
+        android:background="@null"
+        android:src="@drawable/anh_dong_de_thuong"/>
+</RelativeLayout>
