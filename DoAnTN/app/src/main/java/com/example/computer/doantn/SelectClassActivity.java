@@ -34,7 +34,7 @@ public class SelectClassActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chon_lop);
-        img = (ImageView) findViewById(R.id.imgView);
+        img = (ImageView) findViewById(R.id.btnBack);
         button = (Button) findViewById(R.id.btnLop1);
         viewGroup = (ViewGroup) findViewById(R.id.view_root);
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(150, 150);
@@ -87,5 +87,6 @@ public class SelectClassActivity extends AppCompatActivity {
         Rect R1=new Rect(v1.getLeft(), v1.getTop(), v1.getRight(), v1.getBottom());
         Rect R2=new Rect(v2.getLeft(), v2.getTop(), v2.getRight(), v2.getBottom());
         return R1.intersect(R2);
+        //dis me csi loz j vay
     }
 }

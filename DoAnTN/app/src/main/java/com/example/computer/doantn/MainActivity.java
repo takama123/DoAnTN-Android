@@ -2,15 +2,12 @@ package com.example.computer.doantn;
 
 import android.content.Context;
 import android.content.Intent;
-import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -33,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void playMusic(int idMusic) {
         mp = MediaPlayer.create(this, idMusic);
-        mp.start();
+       // mp.start();
         mp.setVolume(1, 1);
     }
 

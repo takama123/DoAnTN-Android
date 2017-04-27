@@ -1,51 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/background"
     >
     <RelativeLayout
-        android:layout_width="1000px"
-        android:layout_height="400px"
+        android:layout_width="500dp"
+        android:layout_height="200dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50px"
         android:background="@mipmap/table"
         android:scaleType="fitXY">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_centerInParent="true"
-            >
-            <ImageButton
-
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="54dp"
+            android:layout_marginStart="54dp">
+            <TextView
+                android:id="@+id/tvSo1"
                 android:layout_width="150px"
                 android:layout_height="150px"
-                android:background="@color/colorAccent"/>
-            <ImageButton
-
+                android:background="@android:color/darker_gray"
+                android:text="10"
+                android:textSize="40dp"
+                android:gravity="center"
+                android:textColor="@android:color/holo_red_dark"
+                />
+            <TextView
+                android:id="@+id/tvCal"
                 android:layout_width="150px"
                 android:layout_height="150px"
-                android:background="@color/colorAccent"
-                android:layout_marginLeft="30px"/>
-            <ImageButton
-
+                android:background="@android:color/darker_gray"
+                android:text="10"
+                android:textSize="40dp"
+                android:gravity="center"
+                android:textColor="@android:color/holo_red_dark"
+                />
+            <TextView
+                android:id="@+id/tvSo2"
                 android:layout_width="150px"
                 android:layout_height="150px"
-                android:background="@color/colorAccent"
-                android:layout_marginLeft="30px"/>
-            <ImageButton
-
+                android:background="@android:color/darker_gray"
+                android:text="10"
+                android:textSize="40dp"
+                android:gravity="center"
+                android:textColor="@android:color/holo_red_dark"
+                />
+            <TextView
+                android:id="@+id/tvEqual"
                 android:layout_width="150px"
                 android:layout_height="150px"
-                android:background="@color/colorAccent"
-                android:layout_marginLeft="30px"/>
-            <ImageButton
-
+                android:background="@android:color/darker_gray"
+                android:text="="
+                android:textSize="40dp"
+                android:gravity="center"
+                android:textColor="@android:color/holo_red_dark"
+                />
+            <TextView
+                android:id="@+id/tvKq"
                 android:layout_width="150px"
                 android:layout_height="150px"
-                android:background="@color/colorAccent"
-                android:layout_marginLeft="30px"/>
+                android:background="@android:color/darker_gray"
+                android:text="10"
+                android:textSize="40dp"
+                android:gravity="center"
+                android:textColor="@android:color/holo_red_dark"
+                />
+
         </LinearLayout>
     </RelativeLayout>
     <LinearLayout
@@ -56,29 +83,46 @@
         android:layout_centerHorizontal="true"
         android:orientation="horizontal"
         >
-        <ImageButton
-            android:id="@+id/dapanA"
+        <TextView
+            android:id="@+id/tvPrefix1"
             android:layout_width="150px"
             android:layout_height="150px"
-            android:background="@color/colorAccent"/>
-        <ImageButton
-            android:id="@+id/dapanB"
+            android:background="@android:color/darker_gray"
+            android:text="10"
+            android:textSize="40dp"
+            android:gravity="center"
+            android:textColor="@android:color/holo_red_dark"
+            />
+        <TextView
+            android:id="@+id/tvPrefix2"
             android:layout_width="150px"
             android:layout_height="150px"
-            android:background="@color/colorAccent"
-            android:layout_marginLeft="50px"/>
-        <ImageButton
-            android:id="@+id/dapanC"
+            android:background="@android:color/darker_gray"
+            android:text="10"
+            android:textSize="40dp"
+            android:gravity="center"
+            android:textColor="@android:color/holo_red_dark"
+            />
+        <TextView
+            android:id="@+id/tvPrefix3"
             android:layout_width="150px"
             android:layout_height="150px"
-            android:background="@color/colorAccent"
-            android:layout_marginLeft="50px"/>
-        <ImageButton
-            android:id="@+id/dapanD"
+            android:background="@android:color/darker_gray"
+            android:text="10"
+            android:textSize="40dp"
+            android:gravity="center"
+            android:textColor="@android:color/holo_red_dark"
+            />
+        <TextView
+            android:id="@+id/tvPrefix4"
             android:layout_width="150px"
             android:layout_height="150px"
-            android:background="@color/colorAccent"
-            android:layout_marginLeft="50px"/>
+            android:background="@android:color/darker_gray"
+            android:text="10"
+            android:textSize="40dp"
+            android:gravity="center"
+            android:textColor="@android:color/holo_red_dark"
+            />
     </LinearLayout>
     <ImageButton
         android:id="@+id/btnSound"
