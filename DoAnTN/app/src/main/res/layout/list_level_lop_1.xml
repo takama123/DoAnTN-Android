@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/view_root"
+    android:background="@mipmap/background">
+    <RelativeLayout
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btnLevel1"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Phép cộng trong phạm vi 10"
+            android:background="@drawable/levelbackground"
+            android:layout_marginRight="30px"
+            />
+
+    </RelativeLayout>
+    <ImageButton
+        android:id="@+id/btnSound"
+        android:src="@mipmap/sound_on_icon"
+        android:background="@null"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10px"
+        android:layout_marginRight="10px"
+        android:layout_width = "30dp"
+        android:layout_height= "30dp"
+        android:scaleType="fitXY"
+        />
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:src="@mipmap/backgreen"
+        android:background="@null"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30px"
+        android:layout_marginLeft="30px"
+        android:layout_width = "60dp"
+        android:layout_height= "60dp"
+        android:scaleType="fitXY"
+        />
+</RelativeLayout>
