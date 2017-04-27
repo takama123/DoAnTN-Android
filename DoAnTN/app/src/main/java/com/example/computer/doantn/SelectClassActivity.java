@@ -6,8 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 /**
  * Created by Computer on 4/9/2017.
@@ -17,13 +19,16 @@ public class SelectClassActivity extends AppCompatActivity {
 
 
     private ImageView img;
-    private Button buton;
+    private Button button;
+    ViewGroup viewGroup;
 
     private String msg = "REPORT";
     private View.DragShadowBuilder dragShadowBuilder;
     private ClipData data;
     private android.widget.RelativeLayout.LayoutParams layoutParams;
 
+    private int _xDelta;
+    private int _yDelta;
     private float touchX = 0;
     private float touchY = 0;
     private float dx = 0;
@@ -34,35 +39,69 @@ public class SelectClassActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chon_lop);
         img = (ImageView) findViewById(R.id.imgView);
-        buton = (Button) findViewById(R.id.btnLop1);
+        button = (Button) findViewById(R.id.btnLop1);
+        viewGroup = (ViewGroup) findViewById(R.id.view_root);
 
-        final float buttonX = buton.getX();
-        final float buttonY = buton.getY();
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(150,150);
 
-        img.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                switch(event.getAction()) {
-                    case MotionEvent.ACTION_DOWN: {
-                        touchX = event.getX();
-                        touchY = event.getY();
-                        dx = touchX - img.getX();
-                        dy = touchY - img.getY();
-                    }
+        img.setLayoutParams(layoutParams);
+        img.setOnTouchListener(new ChoiceTouchListener());
+
+        final float buttonX = button.getX();
+        final float buttonY = button.getY();
+
+    }
+
+    private final class ChoiceTouchListener implements View.OnTouchListener{
+
+        @Override
+        public boolean onTouch(View v, MotionEvent event) {
+            Log.d("VIEW",v.getX()+ "" );
+            final int X = (int) event.getRawX();
+            final int Y = (int) event.getRawY();
+            Log.d("TAG","X: " + X + " Y: "+ Y);
+            switch (event.getAction() & MotionEvent.ACTION_MASK) {
+                case MotionEvent.ACTION_DOWN:
+                    RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) v.getLayoutParams();
+                    _xDelta = X - layoutParams.leftMargin;
+                    _yDelta = Y - layoutParams.topMargin;
+                    Log.d("TAG","action down  " + "X: " + _xDelta + " Y: "+ _yDelta);
                     break;
-                    case MotionEvent.ACTION_MOVE: {
-                        img.setX(event.getX() - dx);
-                        img.setY(event.getY() - dy);
-                    }
+                case MotionEvent.ACTION_UP:
                     break;
-                    case MotionEvent.ACTION_UP: {
-                        if (((touchX <buttonX +10)&&(touchX >buttonX -10))&&((touchY <buttonY +10)&&(touchY >buttonY -10))){
-                            Log.d("fuck::::::","INTO");
-                        }
-                    }
-                }
-                return true;
+                case MotionEvent.ACTION_POINTER_DOWN:
+                    break;
+                case MotionEvent.ACTION_POINTER_UP:
+                    break;
+                case MotionEvent.ACTION_MOVE:
+                    Log.d("TAG","action move");
+                    RelativeLayout.LayoutParams layoutParams1 = (RelativeLayout.LayoutParams) v.getLayoutParams();
+                    layoutParams1.leftMargin = X - _xDelta;
+                    layoutParams1.topMargin = Y - _yDelta;
+                    layoutParams1.rightMargin = -250 ;
+                    layoutParams1.bottomMargin = -250 ;
+                    v.setLayoutParams(layoutParams1);
+                    checkPostion(button,v);
+                    break;
             }
-        });
+            viewGroup.invalidate();
+            return true;
+        }
+    }
+
+    private void checkPostion(View viewDefine, View viewMove){
+         RelativeLayout.LayoutParams layoutParamsViewMove = (RelativeLayout.LayoutParams) viewMove.getLayoutParams();
+         RelativeLayout.LayoutParams layoutParamsViewDefine = (RelativeLayout.LayoutParams) viewDefine.getLayoutParams();
+        Log.d("TAG1:",viewMove.getX()
+                + "+" + viewMove.getY()
+                + "+" + viewDefine.getX()
+                + "+" + viewDefine.getY() );
+
+        if(((viewMove.getX() < viewDefine.getX()+20)
+                &&(viewMove.getX() > viewDefine.getX()-20))
+                &&((viewMove.getY() < viewDefine.getY()+20)
+                &&(viewMove.getY() > viewDefine.getY()-20))){
+            Log.d("TAG1:","lop1");
+        }
     }
 }

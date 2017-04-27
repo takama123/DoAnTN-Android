@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        >
+    android:layout_height="match_parent"
+    android:id="@+id/view_root">
     <Button
         android:id="@+id/btnLop1"
         android:layout_width="wrap_content"
@@ -17,6 +12,7 @@
         android:layout_centerHorizontal="true"
         android:background="@drawable/button_main"
         android:layout_marginRight="30px"
+        android:layout_centerVertical="true"
         />
     <Button
         android:id="@+id/btnLop2"
@@ -27,6 +23,8 @@
         android:layout_centerHorizontal="true"
         android:background="@drawable/button_main"
         android:layout_marginRight="30px"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/btnLop1"
         />
     <Button
         android:id="@+id/btnLop3"
@@ -36,8 +34,9 @@
         android:layout_below="@id/btnSetting"
         android:layout_centerHorizontal="true"
         android:background="@drawable/button_main"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/btnLop2"
         />
-    </LinearLayout>
     <ImageButton
         android:id="@+id/btnSound"
         android:src="@mipmap/sound_on_icon"
