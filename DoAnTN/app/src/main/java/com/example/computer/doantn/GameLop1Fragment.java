@@ -28,6 +28,7 @@ public class GameLop1Fragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.chon_dap_an_dung, container, false);
         mTvSo1 = (TextView)view.findViewById(R.id.tvSo1);

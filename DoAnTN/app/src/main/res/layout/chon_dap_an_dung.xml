@@ -30,6 +30,7 @@
                 android:text="10"
                 android:textSize="40dp"
                 android:gravity="center"
+                android:layout_marginRight="20px"
                 android:textColor="@android:color/holo_red_dark"
                 />
             <TextView
@@ -40,6 +41,7 @@
                 android:text="10"
                 android:textSize="40dp"
                 android:gravity="center"
+                android:layout_marginRight="20px"
                 android:textColor="@android:color/holo_red_dark"
                 />
             <TextView
@@ -50,6 +52,7 @@
                 android:text="10"
                 android:textSize="40dp"
                 android:gravity="center"
+                android:layout_marginRight="20px"
                 android:textColor="@android:color/holo_red_dark"
                 />
             <TextView
@@ -60,6 +63,7 @@
                 android:text="="
                 android:textSize="40dp"
                 android:gravity="center"
+                android:layout_marginRight="20px"
                 android:textColor="@android:color/holo_red_dark"
                 />
             <TextView
@@ -91,6 +95,7 @@
             android:text="10"
             android:textSize="40dp"
             android:gravity="center"
+            android:layout_marginRight="20px"
             android:textColor="@android:color/holo_red_dark"
             />
         <TextView
@@ -101,6 +106,7 @@
             android:text="10"
             android:textSize="40dp"
             android:gravity="center"
+            android:layout_marginRight="20px"
             android:textColor="@android:color/holo_red_dark"
             />
         <TextView
@@ -111,6 +117,7 @@
             android:text="10"
             android:textSize="40dp"
             android:gravity="center"
+            android:layout_marginRight="20px"
             android:textColor="@android:color/holo_red_dark"
             />
         <TextView
@@ -121,31 +128,20 @@
             android:text="10"
             android:textSize="40dp"
             android:gravity="center"
+            android:layout_marginRight="20px"
             android:textColor="@android:color/holo_red_dark"
             />
     </LinearLayout>
-    <ImageButton
-        android:id="@+id/btnSound"
-        android:src="@mipmap/sound_on_icon"
-        android:background="@null"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="10px"
-        android:layout_marginRight="10px"
-        android:layout_width = "30dp"
-        android:layout_height= "30dp"
-        android:scaleType="fitXY"
-        />
     <ImageButton
         android:id="@+id/btnBack"
         android:src="@mipmap/backgreen"
         android:background="@null"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="30px"
-        android:layout_marginLeft="30px"
-        android:layout_width = "50dp"
-        android:layout_height= "50dp"
+        android:layout_marginTop="10px"
+        android:layout_marginLeft="10px"
+        android:layout_width = "30dp"
+        android:layout_height= "30dp"
         android:scaleType="fitXY"
         />
 </RelativeLayout>
