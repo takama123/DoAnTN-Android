@@ -35,10 +35,9 @@
             android:background="@drawable/button_main"
             />
     </RelativeLayout>
-    <ImageButton
+    <Button
         android:id="@+id/btnSound"
-        android:src="@mipmap/sound_on_icon"
-        android:background="@null"
+        android:background="@mipmap/sound_off_icon"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="10px"
@@ -46,6 +45,8 @@
         android:layout_width = "30dp"
         android:layout_height= "30dp"
         android:scaleType="fitXY"
+        android:text="On"
+        android:textSize="0sp"
         />
     <ImageButton
         android:id="@+id/btnBack"

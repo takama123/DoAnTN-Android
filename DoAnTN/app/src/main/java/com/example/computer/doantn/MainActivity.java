@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //end remove title
         setContentView(R.layout.activity_main);
 
         mappingWidget();
@@ -57,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int idView = v.getId();
         switch (idView) {
             case R.id.btnSound:
-                changeStatusVolume(MainActivity.this);
+                changeStatusVolume(sound);
                 break;
             case R.id.btnStart:
                 moveItent("start");
@@ -80,23 +82,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void moveItent(String itent) {
-        Intent itent2 = new Intent(MainActivity.this, SelectClassActivity.class);
+        Intent itent2 = null;
+        if("start".equals(itent)){
+            itent2 = new Intent(MainActivity.this, SelectClassActivity.class);
+        }else if("setting".equals(itent)){
+            itent2 = new Intent(MainActivity.this, SelectClassActivity.class);
+        }
         startActivity(itent2);
-        Log.d("fuck:::::", itent);
     }
 
-    private void changeStatusVolume(Context context) {
-        if (sound.getText().equals("On")) {
+    private void changeStatusVolume(Button view) {
+        if (view.getText().equals("On")) {
             // open volume
             mp.setVolume(1, 1);
-            sound.setBackgroundResource(R.mipmap.sound_on_icon);
-            sound.setText("Off");
+            view.setBackgroundResource(R.mipmap.sound_on_icon);
+            view.setText("Off");
         } else {
-            if (sound.getText().equals("Off")) {
+            if (view.getText().equals("Off")) {
                 //mute volume
                 mp.setVolume(0, 0);
-                sound.setBackgroundResource(R.mipmap.sound_off_icon);
-                sound.setText("On");
+                view.setBackgroundResource(R.mipmap.sound_off_icon);
+                view.setText("On");
             }
         }
     }

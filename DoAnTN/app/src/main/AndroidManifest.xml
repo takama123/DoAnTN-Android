@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.example.computer.doantn"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.computer.doantn">
 
     <application
         android:allowBackup="true"
@@ -12,20 +12,25 @@
             android:name=".MainActivity"
             android:screenOrientation="landscape">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".SelectClassActivity"
-            android:screenOrientation="landscape">
-        </activity>
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".GameMainActivity"
-            android:screenOrientation="landscape">
-
-        </activity>
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".GameLevelActivity"
+            android:label="@string/title_activity_game_level"
+            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".SelectLevelGameActivity"
+            android:label="SelectLevelGameActivity"
+            android:screenOrientation="landscape"></activity>
     </application>
 
 </manifest>
