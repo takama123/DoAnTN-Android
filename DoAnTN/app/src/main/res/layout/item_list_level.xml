@@ -4,15 +4,17 @@
     android:layout_height="wrap_content">
     <Button
         android:id="@+id/imgBtnItemListLevel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
         android:background="@drawable/levelbackground"
         android:layout_gravity="center"
         android:textSize="13dp"
-        android:paddingLeft="10px"
-        android:paddingRight="10px"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
         android:textColor="#FFFFFF"
-        android:text="level 1"
+        android:text="Phép cộng trừ không nhớ trong phạm vi 20"
+        android:maxLines="2"
+        android:maxWidth="200dp"
         />
 
 </RelativeLayout>

@@ -42,6 +42,7 @@ public class SelectClassActivity extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.chon_lop);
 
         setWidgets();
+        playMusic(R.raw.hai_con_than_lan_con);
     }
 
     private void setWidgets() {
@@ -62,24 +63,26 @@ public class SelectClassActivity extends AppCompatActivity implements View.OnCli
     public void onClick(View v) {
         int idView = v.getId();
         Intent itent = new Intent(SelectClassActivity.this, SelectLevelGameActivity.class);
+        mp.stop();
         switch (idView){
             case R.id.btnBack:
                 finish();
+                mp.start();
                 break;
             case R.id.btnSound:
                 changeStatusVolume(btnSound);
                 Log.d("click:","btnSound");
                 break;
             case R.id.btnLop1:
-                itent.putExtra("class","lơp1");
+                itent.putExtra("class","lop1");
                 startActivity(itent);
                 break;
             case R.id.btnLop2:
-                itent.putExtra("class","lơp1");
+                itent.putExtra("class","lop2");
                 startActivity(itent);
                 break;
             case R.id.btnLop3:
-                itent.putExtra("class","lơp1");
+                itent.putExtra("class","lop3");
                 startActivity(itent);
                 break;
 
@@ -103,7 +106,7 @@ public class SelectClassActivity extends AppCompatActivity implements View.OnCli
     }
     private void playMusic(int idMusic) {
         mp = MediaPlayer.create(this, idMusic);
-        // mp.start();
+        mp.start();
         mp.setVolume(1, 1);
     }
 }

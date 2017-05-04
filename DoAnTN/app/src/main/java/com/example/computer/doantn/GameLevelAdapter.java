@@ -44,7 +44,7 @@ public class GameLevelAdapter extends RecyclerView.Adapter<GameLevelAdapter.Game
     public void onBindViewHolder(GameLevelViewHolder holder, int position) {
         GameLevelBean gameLevel = mListData.get(position);
 
-        holder.mButton.setText(gameLevel.getLevel_name());
+        holder.mButton.setText(gameLevel.getTitleLevel());
 
     }
 

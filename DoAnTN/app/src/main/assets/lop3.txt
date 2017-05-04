@@ -1,0 +1,13 @@
+1;6;3;1;Bảng nhân 6
+2;6;4;1;Bảng chia 6
+3;7;3;1;Bảng nhân 7
+4;7;4;1;Bảng chia 7
+5;8;3;1;Bảng nhân 8
+6;8;4;1;Bảng chia 8
+7;9;3;1;Bảng nhân 9
+8;9;4;1;Bảng chia 9
+9;100;4;1;Chia số có 2 chữ số cho số có 1 chữ số
+10;1000;4;1;Chia số có 3 chữ số cho số có 1 chữ số
+11;1000;2;1;Cộng trừ trong phạm vi 1000
+12;1000;7;0;So sánh các số trong phạm vi 1000
+13;1000;6;0;Luyện tập chung

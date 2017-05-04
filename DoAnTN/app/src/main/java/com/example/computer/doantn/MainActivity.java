@@ -1,11 +1,14 @@
 package com.example.computer.doantn;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -38,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void playMusic(int idMusic) {
         mp = MediaPlayer.create(this, idMusic);
-       // mp.start();
+        mp.start();
         mp.setVolume(1, 1);
     }
 
@@ -68,7 +71,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 moveItent("setting");
                 break;
             case R.id.btnExit:
-                exit();
+                LayoutInflater inflater = this.getLayoutInflater();
+                View dialogView = inflater.inflate(R.layout.alert_label_editor, null);
+                new AlertDialog.Builder(this)
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setTitle("Thoát khỏi trò chơi !")
+                        .setMessage("Bạn có chắc chắn muốn thoát khỏi trò chơi không ?")
+                        .setPositiveButton("Vâng", new DialogInterface.OnClickListener()
+                        {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+                                System.exit(0);
+                            }
+
+                        })
+                        .setNegativeButton("Không", null)
+                        .show();
                 break;
         }
 
@@ -88,6 +107,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }else if("setting".equals(itent)){
             itent2 = new Intent(MainActivity.this, SelectClassActivity.class);
         }
+        mp.stop();
         startActivity(itent2);
     }
 

@@ -7,24 +7,30 @@ import android.os.Parcelable;
  * Created by Computer on 5/1/2017.
  */
 
-public class GameLevelBean implements Parcelable{
-    private String lop;
-    private int level;
-    private String level_name;
+public class GameLevelBean implements Parcelable {
+    private int idLevel;
+    private String titleLevel;
+    private String maxlength;
+    private String isRemember;
+    private String typeMath;
 
     public GameLevelBean() {
     }
 
-    public GameLevelBean(String lop, int level, String level_name) {
-        this.lop = lop;
-        this.level = level;
-        this.level_name = level_name;
+    public GameLevelBean(int level, String titleLevel, String maxlength, String isRemember, String typeMath) {
+        this.idLevel = level;
+        this.titleLevel = titleLevel;
+        this.maxlength = maxlength;
+        this.isRemember = isRemember;
+        this.typeMath = typeMath;
     }
 
     protected GameLevelBean(Parcel in) {
-        lop = in.readString();
-        level = in.readInt();
-        level_name = in.readString();
+        idLevel = in.readInt();
+        titleLevel = in.readString();
+        maxlength = in.readString();
+        isRemember = in.readString();
+        typeMath = in.readString();
     }
 
     public static final Creator<GameLevelBean> CREATOR = new Creator<GameLevelBean>() {
@@ -39,28 +45,44 @@ public class GameLevelBean implements Parcelable{
         }
     };
 
-    public String getLop() {
-        return lop;
-    }
-
-    public void setLop(String lop) {
-        this.lop = lop;
-    }
-
     public int getLevel() {
-        return level;
+        return idLevel;
     }
 
     public void setLevel(int level) {
-        this.level = level;
+        this.idLevel = level;
     }
 
-    public String getLevel_name() {
-        return level_name;
+    public String getTitleLevel() {
+        return titleLevel;
     }
 
-    public void setLevel_name(String level_name) {
-        this.level_name = level_name;
+    public void setTitleLevel(String titleLevel) {
+        this.titleLevel = titleLevel;
+    }
+
+    public String getMaxlength() {
+        return maxlength;
+    }
+
+    public void setMaxlength(String maxlength) {
+        this.maxlength = maxlength;
+    }
+
+    public String getIsRemember() {
+        return isRemember;
+    }
+
+    public void setIsRemember(String isRemember) {
+        this.isRemember = isRemember;
+    }
+
+    public String getTypeMath() {
+        return typeMath;
+    }
+
+    public void setTypeMath(String typeMath) {
+        this.typeMath = typeMath;
     }
 
     @Override
@@ -70,8 +92,10 @@ public class GameLevelBean implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(lop);
-        dest.writeInt(level);
-        dest.writeString(level_name);
+        dest.writeInt(idLevel);
+        dest.writeString(titleLevel);
+        dest.writeString(maxlength);
+        dest.writeString(isRemember);
+        dest.writeString(typeMath);
     }
 }

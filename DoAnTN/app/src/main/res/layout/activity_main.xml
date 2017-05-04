@@ -11,8 +11,9 @@
     <ImageView
         android:id="@+id/name_app"
         android:layout_marginTop="50px"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="400dp"
+        android:layout_height="150dp"
+        android:scaleType="fitXY"
         android:src="@mipmap/giupbehoctoan"
         android:layout_centerHorizontal="true"
         android:background="@null"
@@ -60,10 +61,5 @@
         android:text="On"
         android:textSize="0sp"
         />
-    <pl.droidsonroids.gif.GifImageView
-        android:layout_width = "100dp"
-        android:layout_height= "100dp"
-        android:scaleType="fitXY"
-        android:background="@null"
-        android:src="@drawable/anh_dong_de_thuong"/>
+
 </RelativeLayout>

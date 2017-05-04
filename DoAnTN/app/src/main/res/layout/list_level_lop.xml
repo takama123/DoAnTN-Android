@@ -4,17 +4,7 @@
     android:layout_height="match_parent"
     android:id="@+id/view_root"
     android:background="@mipmap/background">
-    <RelativeLayout
-        android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
-        android:layout_height="300dp">
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recViewListLevel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        </android.support.v7.widget.RecyclerView>
 
-    </RelativeLayout>
     <Button
         android:id="@+id/btnSound"
         android:background="@mipmap/sound_off_icon"
@@ -40,4 +30,18 @@
         android:layout_height= "30dp"
         android:scaleType="fitXY"
         />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recViewListLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            android:scrollbarThumbVertical="@drawable/scrollbar">
+        </android.support.v7.widget.RecyclerView>
+
+    </RelativeLayout>
 </RelativeLayout>
