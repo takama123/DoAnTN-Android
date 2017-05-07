@@ -22,7 +22,8 @@ public class GameLop1Fragment extends Fragment implements View.OnClickListener {
     Random random  = new Random();
     int so1,so2,kq,cal;
     int location;
-    int lop, typeMath, maxNumber, idCauHoi ;
+    int typeMath, maxNumber, idCauHoi ;
+    String lop;
     String idLevel;
     boolean isRemember;
 
@@ -60,7 +61,7 @@ public class GameLop1Fragment extends Fragment implements View.OnClickListener {
     private void getInfoLevel() {
         idLevel = getArguments().getString("idLevel");
         idCauHoi = Integer.parseInt(getArguments().getString("idCauHoi"));
-        lop = Integer.parseInt(getArguments().getString("lop"));
+        lop = (getArguments().getString("lop"));
         maxNumber = Integer.parseInt(getArguments().getString("maxNumber"));
         typeMath = Integer.parseInt(getArguments().getString("typeMath"));
         isRemember = Boolean.parseBoolean(getArguments().getString("isRemember"));

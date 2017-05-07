@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -91,8 +92,9 @@ public class SelectLevelGameActivity extends AppCompatActivity implements View.O
     public void onItemClick(int position) { // click level
         GameLevelBean gameLevel = listLevel.get(position);
         Intent itent = new Intent(this, GameMainActivity.class);
+        Log.d("aaaa",gameLevel.getLevel()+"");
         itent.putExtra("lop", nameClass);
-        itent.putExtra("idLevel", gameLevel.getLevel());
+        itent.putExtra("idLevel", gameLevel.getLevel()+"");
         itent.putExtra("maxNumber", gameLevel.getMaxlength());
         itent.putExtra("typeMath", gameLevel.getTypeMath());
         itent.putExtra("isRemember", gameLevel.getIsRemember());

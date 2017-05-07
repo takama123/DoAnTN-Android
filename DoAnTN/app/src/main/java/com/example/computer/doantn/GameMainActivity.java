@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -24,7 +25,7 @@ public class GameMainActivity extends AppCompatActivity
     private String maxNumber;
     private String typeMath;
     private String isRemember;
-    private int idLevel;
+    private String idLevel;
     private int idCauHoi = 0;
     private GameLop1Fragment mGameLop1Fragment;
     private GameLib gameLib;
@@ -50,7 +51,7 @@ public class GameMainActivity extends AppCompatActivity
     }
 
     private void getInfoLevel() {
-        idLevel = Integer.parseInt(getIntent().getStringExtra("idLevel"));
+        idLevel = getIntent().getStringExtra("idLevel");
         lop = getIntent().getStringExtra("lop");
         maxNumber = getIntent().getStringExtra("maxNumber");
         typeMath = getIntent().getStringExtra("typeMath");
@@ -59,10 +60,12 @@ public class GameMainActivity extends AppCompatActivity
     }
 
     private void initViews() {
+        Log.d("aaaa",idLevel +":" + lop +":" + idCauHoi +":" + maxNumber +":");
        mGameLop1Fragment = new GameLop1Fragment();
         idCauHoi ++;
         Bundle bundle = new Bundle();
         bundle.putString("idCauHoi",idCauHoi+"");
+        bundle.putString("idLevel",idLevel+"");
         bundle.putString("lop",lop);
         bundle.putString("maxNumber",maxNumber);
         bundle.putString("typeMath",typeMath);
@@ -81,7 +84,7 @@ public class GameMainActivity extends AppCompatActivity
     public void onFragmentInteraction(int idCauHoi) {
         if (idCauHoi == 10){
             int levelOpen = gameLib.getNumberLevelOpen(lop, this);
-            if(idLevel == levelOpen){
+            if(Integer.parseInt(idLevel) == levelOpen){
                 gameLib.wirteFile(lop, levelOpen+1);
             }
             finish();
