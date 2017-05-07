@@ -1,19 +1,16 @@
 package com.example.computer.doantn;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -68,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 moveItent("start");
                 break;
             case R.id.btnSetting:
-                moveItent("setting");
+                resetLevel();
                 break;
             case R.id.btnExit:
                 LayoutInflater inflater = this.getLayoutInflater();
@@ -84,7 +81,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 finish();
                                 System.exit(0);
                             }
-
                         })
                         .setNegativeButton("Không", null)
                         .show();
@@ -93,11 +89,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    private void exit() {
-        Intent intent = new Intent(Intent.ACTION_MAIN);
-        intent.addCategory(Intent.CATEGORY_HOME);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
+    private void resetLevel() {
+        new AlertDialog.Builder(this)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setTitle("Reset game !")
+                .setMessage("Bạn có chắc chắn muốn reset trò chơi không ?")
+                .setPositiveButton("Vâng", new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                        System.exit(0);
+                    }
+                })
+                .setNegativeButton("Không", null)
+                .show();
     }
 
     private void moveItent(String itent) {

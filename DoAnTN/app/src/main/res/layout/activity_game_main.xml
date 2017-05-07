@@ -19,13 +19,22 @@
         android:layout_marginBottom="100dp"
 
         />
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/main_content"
-        >
 
-    </FrameLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="50dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/idcauhoi"
+            android:textColor="#ffff0000"
+            android:text="5 / 9"
+            android:textSize="20dp"
+            />
+    </RelativeLayout>
     <ImageButton
         android:id="@+id/btnBack"
         android:src="@mipmap/backgreen"
@@ -38,4 +47,14 @@
         android:layout_height= "30dp"
         android:scaleType="fitXY"
         />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/main_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/btnBack"
+        android:layout_alignStart="@+id/btnBack">
+
+    </FrameLayout>
 </RelativeLayout>

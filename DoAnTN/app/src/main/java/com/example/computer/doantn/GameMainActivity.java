@@ -1,24 +1,33 @@
 package com.example.computer.doantn;
 
-import android.net.Uri;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageButton;
+import android.widget.TextView;
+
+import com.example.computer.doantn.bean.GameLib;
 
 public class GameMainActivity extends AppCompatActivity
-    implements GameLop1Fragment.OnFragmentInteractionListener {
+    implements GameLop1Fragment.OnFragmentInteractionListener, View.OnClickListener {
 
+    private ImageButton mBtnBack;
+    private TextView soCauHoi;
     private String lop;
     private String maxNumber;
     private String typeMath;
     private String isRemember;
+    private int idLevel;
+    private int idCauHoi = 0;
     private GameLop1Fragment mGameLop1Fragment;
+    private GameLib gameLib;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +37,11 @@ public class GameMainActivity extends AppCompatActivity
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //end remove title
         setContentView(R.layout.activity_game_main);
+        gameLib = new GameLib();
+        soCauHoi = (TextView) findViewById(R.id.idcauhoi);
+        mBtnBack = (ImageButton) findViewById(R.id.btnBack);
 
+        mBtnBack.setOnClickListener(this);
         //get info level
         getInfoLevel();
 
@@ -37,6 +50,7 @@ public class GameMainActivity extends AppCompatActivity
     }
 
     private void getInfoLevel() {
+        idLevel = Integer.parseInt(getIntent().getStringExtra("idLevel"));
         lop = getIntent().getStringExtra("lop");
         maxNumber = getIntent().getStringExtra("maxNumber");
         typeMath = getIntent().getStringExtra("typeMath");
@@ -46,7 +60,9 @@ public class GameMainActivity extends AppCompatActivity
 
     private void initViews() {
        mGameLop1Fragment = new GameLop1Fragment();
+        idCauHoi ++;
         Bundle bundle = new Bundle();
+        bundle.putString("idCauHoi",idCauHoi+"");
         bundle.putString("lop",lop);
         bundle.putString("maxNumber",maxNumber);
         bundle.putString("typeMath",typeMath);
@@ -62,13 +78,25 @@ public class GameMainActivity extends AppCompatActivity
     }
 
     @Override
-    public void onFragmentInteraction() {
-        doiManChoi();
+    public void onFragmentInteraction(int idCauHoi) {
+        if (idCauHoi == 10){
+            int levelOpen = gameLib.getNumberLevelOpen(lop, this);
+            if(idLevel == levelOpen){
+                gameLib.wirteFile(lop, levelOpen+1);
+            }
+            finish();
+        }else {
+            soCauHoi.setText(idCauHoi + " / 10");
+            doiManChoi();
+        }
+
     }
 
     public void clickTest(View view) {
+        idCauHoi++ ;
         GameLop1Fragment fragment = new GameLop1Fragment();
         Bundle bundle = new Bundle();
+        bundle.putString("idCauHoi",idCauHoi+"");
         bundle.putString("lop",lop);
         bundle.putString("maxNumber",maxNumber);
         bundle.putString("typeMath",typeMath);
@@ -87,8 +115,10 @@ public class GameMainActivity extends AppCompatActivity
     }
 
     void doiManChoi(){
+        idCauHoi++ ;
         GameLop1Fragment fragment = new GameLop1Fragment();
         Bundle bundle = new Bundle();
+        bundle.putString("idCauHoi",idCauHoi+"");
         bundle.putString("lop",lop);
         bundle.putString("maxNumber",maxNumber);
         bundle.putString("typeMath",typeMath);
@@ -110,5 +140,24 @@ public class GameMainActivity extends AppCompatActivity
     public void onBackPressed() {
         super.onBackPressed();
         finish();
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v.getId() == R.id.btnBack){
+            new AlertDialog.Builder(this)
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setTitle("Thoát khỏi màn chơi !")
+                    .setMessage("Bạn có chắc chắn muốn thoát khỏi màn đang chơi không ?")
+                    .setPositiveButton("Vâng", new DialogInterface.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
+                    })
+                    .setNegativeButton("Không", null)
+                    .show();
+        }
     }
 }

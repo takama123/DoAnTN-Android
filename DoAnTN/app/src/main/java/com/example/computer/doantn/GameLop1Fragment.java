@@ -2,10 +2,9 @@ package com.example.computer.doantn;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.net.Uri;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +12,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class GameLop1Fragment extends Fragment implements View.OnClickListener {
@@ -24,7 +22,8 @@ public class GameLop1Fragment extends Fragment implements View.OnClickListener {
     Random random  = new Random();
     int so1,so2,kq,cal;
     int location;
-    int lop, typeMath, maxNumber;
+    int lop, typeMath, maxNumber, idCauHoi ;
+    String idLevel;
     boolean isRemember;
 
     public GameLop1Fragment() {
@@ -59,6 +58,8 @@ public class GameLop1Fragment extends Fragment implements View.OnClickListener {
     }
 
     private void getInfoLevel() {
+        idLevel = getArguments().getString("idLevel");
+        idCauHoi = Integer.parseInt(getArguments().getString("idCauHoi"));
         lop = Integer.parseInt(getArguments().getString("lop"));
         maxNumber = Integer.parseInt(getArguments().getString("maxNumber"));
         typeMath = Integer.parseInt(getArguments().getString("typeMath"));
@@ -110,10 +111,12 @@ public class GameLop1Fragment extends Fragment implements View.OnClickListener {
                 i=3;
                 break;
         }
+        // chon dap an dung
         if(i== location){
-            Toast.makeText(getContext(),"BAN CHON TRUNG' ROI DO",Toast.LENGTH_LONG).show();
             mTvKq.setText(kq+"");
-            mListener.onFragmentInteraction();
+            final MediaPlayer mp2 = MediaPlayer.create(view.getContext(), R.raw.tiengvotay);
+            mp2.start();
+            mListener.onFragmentInteraction(idCauHoi);
         }
     }
 
@@ -121,7 +124,7 @@ public class GameLop1Fragment extends Fragment implements View.OnClickListener {
 
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction();
+        void onFragmentInteraction(int idCauHoi);
     }
 
     public void randomValue(int maxNumber, int typeMath, boolean isRemember){

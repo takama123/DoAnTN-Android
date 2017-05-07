@@ -1,7 +1,7 @@
 1;10;0;0;Phép cộng trong phạm vi 10
 2;10;1;0;Phép trừ trong phạm vi 10
 3;10;2;0;Phép cộng trừ trong phạm vi 10
-4;50;2;0;Phép cộng trừ không nhớ trong phạm vi 20
+4;50;2;0;Phép cộng trừ không nhớ trong phạm vi 50
 5;100;0;0;Phép cộng không nhớ trong phạm vi 100
 6;100;1;0;Phép trừ không nhớ trong phạm vi 100
 7;100;8;0;Luyện tập chung
