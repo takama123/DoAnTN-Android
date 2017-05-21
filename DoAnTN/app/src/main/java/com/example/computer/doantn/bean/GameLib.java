@@ -3,6 +3,7 @@ package com.example.computer.doantn.bean;
 import android.content.Context;
 import android.os.Environment;
 import android.util.Xml;
+import android.widget.Toast;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -135,5 +136,16 @@ public class GameLib {
         writeXml("lop1", "1");
         writeXml("lop2", "1");
         writeXml("lop3", "1");
+    }
+
+    public void nextLevel(String lop, Context context) throws IOException {
+        int maxLevel = getMaxLevel(context, lop);
+        int quantityLesson = getAllListGame(context, lop).size();
+
+        if(maxLevel == quantityLesson ){
+            Toast.makeText(context, "Chúc mừng bạn hoàn thành khóa học!", Toast.LENGTH_SHORT).show();
+        }else{
+            writeXml(lop, (maxLevel+1)+"");
+        }
     }
 }

@@ -116,6 +116,20 @@ public class SelectLevelGameActivity extends AppCompatActivity implements View.O
     }
 
     @Override
+    protected void onResume() {
+        mp.start();
+        Log.d("123","123");
+        setListLevelClass();
+        super.onResume();
+    }
+
+    @Override
+    protected void onStop() {
+        mp.stop();
+        super.onStop();
+    }
+
+    @Override
     public void onClick(View v) { // click button back or sound
         int idView = v.getId();
         switch (idView) {

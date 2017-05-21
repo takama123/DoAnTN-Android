@@ -8,18 +8,6 @@
     android:background="@mipmap/background"
     tools:context="com.example.computer.doantn.ui.activity.GameMainActivity">
 
-    <Button
-        android:text="Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnNext"
-        android:onClick="clickTest"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="100dp"
-
-        />
-
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

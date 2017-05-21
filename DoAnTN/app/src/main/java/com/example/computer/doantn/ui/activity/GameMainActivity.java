@@ -82,24 +82,23 @@ public class GameMainActivity extends AppCompatActivity
 
     private void convertScene(Fragment fragment){
         FragmentManager manager = getSupportFragmentManager();
-
         manager.beginTransaction().replace(R.id.main_content,fragment,fragment.getTag())
             .commit();
     }
 
     @Override
     public void onFragmentInteraction(int idCauHoi) throws ParserConfigurationException, SAXException, IOException {
-        if (idCauHoi == 10){
+        if (idCauHoi == 10){//check cau hoi cuoi cung
             int levelOpen = gameLib.getMaxLevel(this, lop);
             if(Integer.parseInt(idLevel) == levelOpen){
                 gameLib.wirteFile(lop, levelOpen+1);
             }
+            gameLib.nextLevel(lop, this);
             finish();
         }else {
             soCauHoi.setText(idCauHoi + " / 10");
             doiManChoi();
         }
-
     }
 
     public void clickTest(View view) {
