@@ -1,11 +1,9 @@
-package com.example.computer.doantn;
+package com.example.computer.doantn.ui.activity;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
+
+import com.example.computer.doantn.R;
 
 public class GameLevelActivity extends AppCompatActivity {
 

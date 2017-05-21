@@ -1,4 +1,4 @@
-package com.example.computer.doantn;
+package com.example.computer.doantn.ui.fragment;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -11,8 +11,15 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.computer.doantn.R;
+
+import org.xml.sax.SAXException;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
+
+import javax.xml.parsers.ParserConfigurationException;
 
 public class GameLop1Fragment extends Fragment implements View.OnClickListener {
     private TextView mTvSo1,mTvSo2,mTvCal,mTvKq, mTvEqual;
@@ -50,7 +57,7 @@ public class GameLop1Fragment extends Fragment implements View.OnClickListener {
         mTvCal = (TextView)view.findViewById(R.id.tvCal);
         mTvKq = (TextView)view.findViewById(R.id.tvKq);
         mTvEqual = (TextView)view.findViewById(R.id.tvEqual);
-        mTvKq.setText("123");
+        mTvKq.setText("?");
 
         mTvPrefix[0] = (TextView)view.findViewById(R.id.tvPrefix1);
         mTvPrefix[1] = (TextView)view.findViewById(R.id.tvPrefix2);
@@ -117,7 +124,15 @@ public class GameLop1Fragment extends Fragment implements View.OnClickListener {
             mTvKq.setText(kq+"");
             final MediaPlayer mp2 = MediaPlayer.create(view.getContext(), R.raw.tiengvotay);
             mp2.start();
-            mListener.onFragmentInteraction(idCauHoi);
+            try {
+                mListener.onFragmentInteraction(idCauHoi);
+            } catch (ParserConfigurationException e) {
+                e.printStackTrace();
+            } catch (SAXException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -125,7 +140,7 @@ public class GameLop1Fragment extends Fragment implements View.OnClickListener {
 
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction(int idCauHoi);
+        void onFragmentInteraction(int idCauHoi) throws ParserConfigurationException, SAXException, IOException;
     }
 
     public void randomValue(int maxNumber, int typeMath, boolean isRemember){
@@ -212,7 +227,7 @@ public class GameLop1Fragment extends Fragment implements View.OnClickListener {
             listKQ.add(randomKQ);
             mTvPrefix[i].setText(randomKQ+ "");
         }
-        mTvKq.setText("");
+        mTvKq.setText("?");
     }
 
     private void setTypeMath(int typeMath) {

@@ -1,21 +1,17 @@
-package com.example.computer.doantn;
+package com.example.computer.doantn.ui.activity;
 
-import android.content.ClipData;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Rect;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
+
+import com.example.computer.doantn.R;
 
 /**
  * Created by Computer on 4/9/2017.

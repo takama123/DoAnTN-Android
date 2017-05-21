@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+
+<ListLesson>
+    <Lesson
+        idLesson="1"
+        titleLesson="Phép cộng cớ nhớ"
+        maxNumber="20"
+        typeMath="0"
+        isRemember="1"
+    />
+    <Lesson
+        idLesson="2"
+        titleLesson="Phép trừ có nhớ"
+        maxNumber="20"
+        typeMath="1"
+        isRemember="1"
+    />
+    <Lesson
+        idLesson="3"
+        titleLesson="Luyện tập chung"
+        maxNumber="20"
+        typeMath="2"
+        isRemember="1"
+    />
+    <Lesson
+        idLesson="4"
+        titleLesson="Bảng nhân 2"
+        maxNumber="2"
+        typeMath="3"
+        isRemember="0"
+    />
+    <Lesson
+        idLesson="5"
+        titleLesson="Bảng chia 2"
+        maxNumber="2"
+        typeMath="4"
+        isRemember="0"
+    />
+    <Lesson
+        idLesson="6"
+        titleLesson="Bảng nhân 3"
+        maxNumber="3"
+        typeMath="3"
+        isRemember="0"
+    />
+    <Lesson
+        idLesson="7"
+        titleLesson="Bảng chia 3"
+        maxNumber="3"
+        typeMath="4"
+        isRemember="0"
+    />
+    <Lesson
+        idLesson="8"
+        titleLesson="Bảng nhân 4"
+        maxNumber="4"
+        typeMath="3"
+        isRemember="0"
+    />
+    <Lesson
+        idLesson="9"
+        titleLesson="Bảng chia 4"
+        maxNumber="4"
+        typeMath="4"
+        isRemember="0"
+    />
+    <Lesson
+        idLesson="10"
+        titleLesson="Bảng nhân 5"
+        maxNumber="5"
+        typeMath="3"
+        isRemember="0"
+    />
+    <Lesson
+        idLesson="11"
+        titleLesson="Bảng chia 5"
+        maxNumber="5"
+        typeMath="4"
+        isRemember="0"
+    />
+    <Lesson
+        idLesson="12"
+        titleLesson="Luyện tập chung"
+        maxNumber="5"
+        typeMath="5"
+        isRemember="0"
+    />
+</ListLesson>

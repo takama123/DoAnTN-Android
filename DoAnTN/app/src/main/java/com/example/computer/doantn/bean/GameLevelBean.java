@@ -8,11 +8,19 @@ import android.os.Parcelable;
  */
 
 public class GameLevelBean implements Parcelable {
+//    enum pheptoan{
+//        cong,
+//        tru,
+//        chia
+//        nhan,
+//    };
+
     private int idLevel;
     private String titleLevel;
     private String maxlength;
     private String isRemember;
     private String typeMath;
+
 
     public GameLevelBean() {
     }

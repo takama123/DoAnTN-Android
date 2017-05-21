@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<ListLesson>
+    <Lesson
+        idLesson="1"
+        titleLesson="Phép cộng trong phạm vi 10"
+        maxNumber="10"
+        typeMath="0"
+        isRemember="0"
+    />
+    <Lesson
+        idLesson="2"
+        titleLesson="Phép trừ trong phạm vi 10"
+        maxNumber="10"
+        typeMath="1"
+        isRemember="0"
+    />
+    <Lesson
+        idLesson="3"
+        titleLesson="Phép cộng trừ trong phạm vi 10"
+        maxNumber="10"
+        typeMath="3"
+        isRemember="0"
+    />
+    <Lesson
+        idLesson="4"
+        titleLesson="Phép cộng trừ không nhớ trong phạm vi 50"
+        maxNumber="50"
+        typeMath="3"
+        isRemember="0"
+    />
+    <Lesson
+        idLesson="5"
+        titleLesson="Phép cộng không nhớ trong phạm vi 100"
+        maxNumber="100"
+        typeMath="0"
+        isRemember="0"
+    />
+    <Lesson
+        idLesson="6"
+        titleLesson="Phép trừ không nhớ trong phạm vi 100"
+        maxNumber="100"
+        typeMath="1"
+        isRemember="0"
+    />
+    <Lesson
+        idLesson="7"
+        titleLesson="Luyện tập chung"
+        maxNumber="100"
+        typeMath="2"
+        isRemember="0"
+    />
+</ListLesson>

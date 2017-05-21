@@ -1,13 +1,13 @@
-package com.example.computer.doantn;
+package com.example.computer.doantn.ui.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.computer.doantn.R;
 import com.example.computer.doantn.bean.GameLevelBean;
 
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class GameLevelAdapter extends RecyclerView.Adapter<GameLevelAdapter.GameLevelViewHolder>{
 
     private ArrayList<GameLevelBean> mListData;
-    private Context mContext;
+    public Context mContext;
     private LayoutInflater mLayoutInflater;
     private CallBack callBack;
 
@@ -27,7 +27,6 @@ public class GameLevelAdapter extends RecyclerView.Adapter<GameLevelAdapter.Game
         this.mContext = context;
         this.mListData = listData;
         this.mLayoutInflater = LayoutInflater.from(context);
-
     }
 
     public void setCallBack(CallBack callBack) {
@@ -70,7 +69,7 @@ public class GameLevelAdapter extends RecyclerView.Adapter<GameLevelAdapter.Game
         }
     }
 
-    interface CallBack{
+    public interface CallBack{
         void onItemClick(int position);
     }
 }

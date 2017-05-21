@@ -1,4 +1,4 @@
-package com.example.computer.doantn;
+package com.example.computer.doantn.ui.activity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -14,7 +14,15 @@ import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.computer.doantn.R;
 import com.example.computer.doantn.bean.GameLib;
+import com.example.computer.doantn.ui.fragment.GameLop1Fragment;
+
+import org.xml.sax.SAXException;
+
+import java.io.IOException;
+
+import javax.xml.parsers.ParserConfigurationException;
 
 public class GameMainActivity extends AppCompatActivity
     implements GameLop1Fragment.OnFragmentInteractionListener, View.OnClickListener {
@@ -45,7 +53,6 @@ public class GameMainActivity extends AppCompatActivity
         mBtnBack.setOnClickListener(this);
         //get info level
         getInfoLevel();
-
         initViews();
         convertScene(mGameLop1Fragment);
     }
@@ -81,9 +88,9 @@ public class GameMainActivity extends AppCompatActivity
     }
 
     @Override
-    public void onFragmentInteraction(int idCauHoi) {
+    public void onFragmentInteraction(int idCauHoi) throws ParserConfigurationException, SAXException, IOException {
         if (idCauHoi == 10){
-            int levelOpen = gameLib.getNumberLevelOpen(lop, this);
+            int levelOpen = gameLib.getMaxLevel(this, lop);
             if(Integer.parseInt(idLevel) == levelOpen){
                 gameLib.wirteFile(lop, levelOpen+1);
             }

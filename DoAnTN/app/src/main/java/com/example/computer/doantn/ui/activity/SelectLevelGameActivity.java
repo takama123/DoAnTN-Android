@@ -1,4 +1,4 @@
-package com.example.computer.doantn;
+package com.example.computer.doantn.ui.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,10 +15,17 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.example.computer.doantn.R;
 import com.example.computer.doantn.bean.GameLevelBean;
 import com.example.computer.doantn.bean.GameLib;
+import com.example.computer.doantn.ui.adapter.GameLevelAdapter;
 
+import org.xml.sax.SAXException;
+
+import java.io.IOException;
 import java.util.ArrayList;
+
+import javax.xml.parsers.ParserConfigurationException;
 
 /**
  * Created by Computer on 5/1/2017.
@@ -45,7 +52,15 @@ public class SelectLevelGameActivity extends AppCompatActivity implements View.O
         // end remove title
         setContentView(R.layout.list_level_lop);
         gameLib = new GameLib();
-        setWidgets(this);
+        try {
+            setWidgets(this);
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         playMusic(R.raw.music1);
     }
 
@@ -55,7 +70,7 @@ public class SelectLevelGameActivity extends AppCompatActivity implements View.O
         mp.setVolume(1, 1);
     }
 
-    private void setWidgets(Context context) {
+    private void setWidgets(Context context) throws ParserConfigurationException, SAXException, IOException {
         btnBack = (ImageButton) findViewById(R.id.btnBack);
         btnSound = (Button) findViewById(R.id.btnSound);
         btnBack.setOnClickListener(this);
@@ -81,10 +96,9 @@ public class SelectLevelGameActivity extends AppCompatActivity implements View.O
         recViewListLevel.setLayoutManager(linearLayoutManager);
     }
 
-    private ArrayList<GameLevelBean> getLevelClass(String nameClass) {
+    private ArrayList<GameLevelBean> getLevelClass(String nameClass) throws IOException, SAXException, ParserConfigurationException {
         ArrayList<GameLevelBean> listLevelOfClass = null;
-        int numberLevelOpen = gameLib.getNumberLevelOpen(nameClass, this);
-        listLevelOfClass = gameLib.getListGameOpenOfLevel(nameClass, numberLevelOpen, this);
+        listLevelOfClass = gameLib.getListGameOpenOfLevel(nameClass, this);
         return listLevelOfClass;
     }
 

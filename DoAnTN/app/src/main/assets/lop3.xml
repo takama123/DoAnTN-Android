@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+
+<ListLesson>
+    <Lesson
+        idLesson="1"
+        titleLesson="Bảng nhân 6"
+        maxNumber="6"
+        typeMath="3"
+        isRemember="0"
+    />
+    <Lesson
+        idLesson="2"
+        titleLesson="Bảng chia 6"
+        maxNumber="6"
+        typeMath="4"
+        isRemember="0"
+    />
+    <Lesson
+        idLesson="3"
+        titleLesson="Bảng nhân 7"
+        maxNumber="7"
+        typeMath="3"
+        isRemember="0"
+    />
+    <Lesson
+        idLesson="4"
+        titleLesson="Bảng chia 7"
+        maxNumber="7"
+        typeMath="4"
+        isRemember="0"
+    />
+    <Lesson
+        idLesson="5"
+        titleLesson="Bảng nhân 8"
+        maxNumber="8"
+        typeMath="3"
+        isRemember="0"
+    />
+    <Lesson
+        idLesson="6"
+        titleLesson="Bảng chia 8"
+        maxNumber="8"
+        typeMath="4"
+        isRemember="0"
+    />
+    <Lesson
+        idLesson="7"
+        titleLesson="Bảng nhân 9"
+        maxNumber="9"
+        typeMath="3"
+        isRemember="0"
+    />
+    <Lesson
+        idLesson="8"
+        titleLesson="Bảng chia 9"
+        maxNumber="9"
+        typeMath="4"
+        isRemember="0"
+    />
+    <Lesson
+        idLesson="10"
+        titleLesson="Chia số có 2 chữ số cho số có 1 chữ số"
+        maxNumber="100"
+        typeMath="4"
+        isRemember="0"
+    />
+    <Lesson
+        idLesson="11"
+        titleLesson="Chia số có 3 chữ số cho số có 1 chữ số"
+        maxNumber="1000"
+        typeMath="4"
+        isRemember="0"
+    />
+    <Lesson
+        idLesson="12"
+        titleLesson="Cộng trừ trong phạm vi 1000"
+        maxNumber="1000"
+        typeMath="2"
+        isRemember="1"
+    />
+    <Lesson
+        idLesson="13"
+        titleLesson="So sánh các số trong phạm vi 1000"
+        maxNumber="1000"
+        typeMath="7"
+        isRemember="0"
+    />
+    <Lesson
+        idLesson="14"
+        titleLesson="Luyện tập chung"
+        maxNumber="1000"
+        typeMath="8"
+        isRemember="1"
+    />
+</ListLesson>

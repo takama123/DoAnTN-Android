@@ -1,9 +1,11 @@
-package com.example.computer.doantn;
+package com.example.computer.doantn.ui.activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -11,6 +13,12 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+
+import com.example.computer.doantn.R;
+import com.example.computer.doantn.bean.Constant;
+import com.example.computer.doantn.bean.GameLib;
+
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -20,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button exit;
 
     MediaPlayer mp = null;
-
+    GameLib gl = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,11 +38,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //end remove title
         setContentView(R.layout.activity_main);
-
         mappingWidget();
-
+        gl = new GameLib();
+        checkTheFistTime();
         playMusic(R.raw.music1);
     }
+
+    private void checkTheFistTime() {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        boolean previouslyStarted = prefs.getBoolean(getString(R.string.pref_previously_started), false);
+        if(!previouslyStarted) {
+            SharedPreferences.Editor edit = prefs.edit();
+            edit.putBoolean(getString(R.string.pref_previously_started), Boolean.TRUE);
+            edit.commit();
+            if(Constant.FIST_TIME){
+                try {
+                    gl.creatSettingFile();
+                    Constant.FIST_TIME = false;
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }
+    }
+
 
     private void playMusic(int idMusic) {
         mp = MediaPlayer.create(this, idMusic);
@@ -86,7 +114,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .show();
                 break;
         }
-
     }
 
     private void resetLevel() {
