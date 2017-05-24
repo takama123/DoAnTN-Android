@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 moveItent("start");
                 break;
             case R.id.btnSetting:
-                resetLevel();
+                moveItent("setting");
                 break;
             case R.id.btnExit:
                 LayoutInflater inflater = this.getLayoutInflater();
@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if("start".equals(itent)){
             itent2 = new Intent(MainActivity.this, SelectClassActivity.class);
         }else if("setting".equals(itent)){
-            itent2 = new Intent(MainActivity.this, SelectClassActivity.class);
+            itent2 = new Intent(MainActivity.this, SettingActivity.class);
         }
         mp.stop();
         startActivity(itent2);

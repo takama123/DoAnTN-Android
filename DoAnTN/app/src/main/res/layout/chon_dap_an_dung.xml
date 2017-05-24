@@ -25,6 +25,7 @@
             android:layout_marginRight="20px"
             android:textColor="@android:color/holo_red_dark"
             />
+
         <TextView
             android:id="@+id/tvPrefix2"
             android:layout_width="90dp"
@@ -59,7 +60,6 @@
             android:textColor="@android:color/holo_red_dark"
             />
     </LinearLayout>
-
     <RelativeLayout
         android:layout_width="500dp"
         android:layout_height="200dp"

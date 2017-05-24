@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.computer.doantn.ui.activity.MainActivity"
+    android:background="@mipmap/background"
+    >
+    <ImageView
+        android:id="@+id/name_app"
+        android:layout_marginTop="50px"
+        android:layout_width="400dp"
+        android:layout_height="150dp"
+        android:scaleType="fitXY"
+        android:layout_centerHorizontal="true"
+        android:background="@null"
+        />
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        android:layout_below="@id/name_app"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_main"
+        android:layout_marginTop="10px"
+        />
+    <Button
+        android:id="@+id/btnSendMail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gửi góp ý"
+        android:layout_below="@id/btnReset"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_main"
+        android:layout_marginTop="10px"
+        />
+    <Button
+        android:id="@+id/btnAbout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About"
+        android:layout_below="@id/btnSendMail"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_main"
+        android:layout_marginTop="10px"
+        />
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:src="@mipmap/backgreen"
+        android:background="@null"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10px"
+        android:layout_marginLeft="10px"
+        android:layout_width = "30dp"
+        android:layout_height= "30dp"
+        android:scaleType="fitXY"
+        />
+   </RelativeLayout>

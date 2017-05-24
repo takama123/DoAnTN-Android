@@ -122,17 +122,27 @@ public class GameLop1Fragment extends Fragment implements View.OnClickListener {
         // chon dap an dung
         if(i== location){
             mTvKq.setText(kq+"");
-            final MediaPlayer mp2 = MediaPlayer.create(view.getContext(), R.raw.tiengvotay);
+            MediaPlayer mp2 = MediaPlayer.create(view.getContext(), R.raw.traloidung);
             mp2.start();
-            try {
-                mListener.onFragmentInteraction(idCauHoi);
-            } catch (ParserConfigurationException e) {
-                e.printStackTrace();
-            } catch (SAXException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            mp2.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    try {
+                        mListener.onFragmentInteraction(idCauHoi);
+                    } catch (ParserConfigurationException e) {
+                        e.printStackTrace();
+                    } catch (SAXException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+        }
+        else{
+            MediaPlayer mp2 = MediaPlayer.create(view.getContext(), R.raw.traloisai);
+            mp2.start();
+            ((TextView)view).setBackgroundResource(R.drawable.table_sai);
         }
     }
 

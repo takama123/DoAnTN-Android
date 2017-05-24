@@ -2,6 +2,7 @@ package com.example.computer.doantn.ui.activity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -124,25 +125,31 @@ public class GameMainActivity extends AppCompatActivity
     }
 
     void doiManChoi(){
-        idCauHoi++ ;
-        GameLop1Fragment fragment = new GameLop1Fragment();
-        Bundle bundle = new Bundle();
-        bundle.putString("idCauHoi",idCauHoi+"");
-        bundle.putString("lop",lop);
-        bundle.putString("maxNumber",maxNumber);
-        bundle.putString("typeMath",typeMath);
-        bundle.putString("isRemember",isRemember);
-        fragment.setArguments(bundle);
-        FragmentManager manager = getSupportFragmentManager();
-//        manager.beginTransaction().replace(R.id.main_content,fragment,fragment.getTag())
-//            .commit();
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+            idCauHoi++ ;
+            GameLop1Fragment fragment = new GameLop1Fragment();
+            Bundle bundle = new Bundle();
+            bundle.putString("idCauHoi",idCauHoi+"");
+            bundle.putString("lop",lop);
+            bundle.putString("maxNumber",maxNumber);
+            bundle.putString("typeMath",typeMath);
+            bundle.putString("isRemember",isRemember);
+            fragment.setArguments(bundle);
+            FragmentManager manager = getSupportFragmentManager();
+    //        manager.beginTransaction().replace(R.id.main_content,fragment,fragment.getTag())
+    //            .commit();
 
-        FragmentTransaction transaction = manager.beginTransaction();
-        transaction.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit);
+            FragmentTransaction transaction = manager.beginTransaction();
+            transaction.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit);
 
-        transaction.replace(R.id.main_content, fragment );
-        transaction.addToBackStack(null);
-        transaction.commit();
+            transaction.replace(R.id.main_content, fragment );
+            transaction.addToBackStack(null);
+            transaction.commit();
+            }
+        },500);
     }
 
     @Override
